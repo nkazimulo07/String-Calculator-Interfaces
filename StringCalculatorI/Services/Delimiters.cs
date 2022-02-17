@@ -17,6 +17,7 @@ namespace StringCalculatorI.Models
             if (numbers.StartsWith("//"))
             {
                 var myDelimiter = numbers.Substring(2, numbers.IndexOf('\n') - 2);
+
                 if (myDelimiter.Contains("[") && myDelimiter.Contains("]"))
                 {
                     delimiters.AddRange(GetMultipleDelimiters(myDelimiter));
