@@ -4,13 +4,13 @@ namespace StringCalculatorI.Models
 {
     public class GetNumbers : IGetNumbers
     {
-        private IConvertNumbers _convertNumbers;
-        private IDelimiters _delimiters;
+        private readonly ICheckNumbers _checkNumbers;
+        private readonly IDelimiters _delimiters;
 
-        public GetNumbers(IConvertNumbers convertNumbers, IDelimiters delimiters)
+        public GetNumbers(ICheckNumbers checkNumbers, IDelimiters delimiters)
         {
-           _convertNumbers = convertNumbers;
-           _delimiters = delimiters;
+            _checkNumbers = checkNumbers;
+            _delimiters = delimiters;
         }
 
         public List<int> GetListOfNumber(string numbers)
@@ -24,7 +24,19 @@ namespace StringCalculatorI.Models
 
             string[] result = numbers.Split(delimiters.ToArray(), StringSplitOptions.None);
 
-            return _convertNumbers.ConvertStringArrayToIntList(result);
+            return ConvertStringArrayToIntList(result);
+        }
+
+        public List<int> ConvertStringArrayToIntList(string[] numbers)
+        {
+            var result = new List<int>();
+
+            for (var i = 0; i < numbers.Length; i++)
+            {
+                result.Add(Convert.ToInt32(numbers[i]));
+            }
+
+            return _checkNumbers.CheckNegatives(result);
         }
     }
 }

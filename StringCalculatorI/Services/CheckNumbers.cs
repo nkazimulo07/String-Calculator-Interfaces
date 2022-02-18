@@ -4,6 +4,7 @@ namespace StringCalculatorI.Models
 {
     public class CheckNumbers : ICheckNumbers
     {
+        
         public List<int> CheckNegatives(List<int> numbers)
         {
             var negativeNumbers = "";

@@ -13,9 +13,8 @@ namespace StringCalculatorKataTest
         public void Setup()
         {
             var checkNumbers = new CheckNumbers();
-            var convertNumbers = new ConvertNumbers(checkNumbers);
             var delimeter = new Delimiters();
-            var getnumbers = new GetNumbers(convertNumbers, delimeter);
+            var getnumbers = new GetNumbers(checkNumbers, delimeter);
             _stringCalculator = new StringCalculator(getnumbers);
         }
 
