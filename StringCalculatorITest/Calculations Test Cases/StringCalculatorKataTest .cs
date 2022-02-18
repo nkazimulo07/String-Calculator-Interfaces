@@ -1,6 +1,6 @@
 using NUnit.Framework;
 using StringCalculatorI;
-using StringCalculatorI.Models;
+using StringCalculatorI.Services;
 using System.Collections.Generic;
 
 namespace StringCalculatorKataTest

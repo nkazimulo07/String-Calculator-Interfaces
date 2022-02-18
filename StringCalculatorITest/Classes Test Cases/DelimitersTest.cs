@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using StringCalculatorI.Models;
+using StringCalculatorI.Services;
 
 namespace StringCalculatorKataTest
 {

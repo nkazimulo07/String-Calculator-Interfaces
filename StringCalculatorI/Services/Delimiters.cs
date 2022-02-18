@@ -1,5 +1,5 @@
 ﻿using StringCalculatorI.Interfaces;
-namespace StringCalculatorI.Models
+namespace StringCalculatorI.Services
 {
     public class Delimiters:IDelimiters
     {

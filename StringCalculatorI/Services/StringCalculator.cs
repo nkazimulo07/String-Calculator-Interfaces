@@ -1,6 +1,6 @@
 ﻿using StringCalculatorI.Interfaces;
 
-namespace StringCalculatorI
+namespace StringCalculatorI.Services
 {
     public class StringCalculator : IStringCalculator
     {
