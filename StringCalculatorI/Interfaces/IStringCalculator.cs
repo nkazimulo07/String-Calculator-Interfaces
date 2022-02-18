@@ -2,7 +2,7 @@
 {
     public interface IStringCalculator
     {
-        public int Add(string number);
-        public int SumOfNumbers(List<int> numbers);
+         int Add(string number);
+         int SumOfNumbers(List<int> numbers);   
     }
 }
