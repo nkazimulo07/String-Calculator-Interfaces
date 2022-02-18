@@ -4,13 +4,13 @@ namespace StringCalculatorI.Models
 {
     public class GetNumbers : IGetNumbers
     {
-        private ConvertNumbers _convertNumbers;
-        private Delimiters _delimiters;
+        private IConvertNumbers _convertNumbers;
+        private IDelimiters _delimiters;
 
-        public GetNumbers()
+        public GetNumbers(IConvertNumbers convertNumbers, IDelimiters delimiters)
         {
-            _convertNumbers = new ConvertNumbers();
-            _delimiters = new Delimiters();
+           _convertNumbers = convertNumbers;
+           _delimiters = delimiters;
         }
 
         public List<int> GetListOfNumber(string numbers)

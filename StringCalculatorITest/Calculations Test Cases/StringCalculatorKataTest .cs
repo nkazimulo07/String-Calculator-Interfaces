@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using StringCalculatorI;
+using StringCalculatorI.Models;
 using System.Collections.Generic;
 
 namespace StringCalculatorKataTest
@@ -11,7 +12,11 @@ namespace StringCalculatorKataTest
         [SetUp]
         public void Setup()
         {
-            _stringCalculator = new StringCalculator();
+            var checkNumbers = new CheckNumbers();
+            var convertNumbers = new ConvertNumbers(checkNumbers);
+            var delimeter = new Delimiters();
+            var getnumbers = new GetNumbers(convertNumbers, delimeter);
+            _stringCalculator = new StringCalculator(getnumbers);
         }
 
         [Test]

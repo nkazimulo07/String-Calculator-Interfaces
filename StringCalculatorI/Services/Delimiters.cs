@@ -1,14 +1,7 @@
 ﻿using StringCalculatorI.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace StringCalculatorI.Models
 {
     public class Delimiters:IDelimiters
-
     {
         public List<string> GetDelimiter(string numbers)
         {

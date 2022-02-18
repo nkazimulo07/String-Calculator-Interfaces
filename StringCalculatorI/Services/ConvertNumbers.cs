@@ -9,11 +9,11 @@ namespace StringCalculatorI.Models
 {
     public class ConvertNumbers : IConvertNumbers
     {
-        private CheckNumbers _checkNumbers;
+        private ICheckNumbers _checkNumbers;
 
-        public ConvertNumbers()
+        public ConvertNumbers(ICheckNumbers checkNumbers)
         {
-            _checkNumbers = new CheckNumbers();
+            _checkNumbers = checkNumbers;
         }
 
         public List<int> ConvertStringArrayToIntList(string[] numbers)

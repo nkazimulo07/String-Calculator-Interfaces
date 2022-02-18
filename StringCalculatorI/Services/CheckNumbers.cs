@@ -4,13 +4,6 @@ namespace StringCalculatorI.Models
 {
     public class CheckNumbers : ICheckNumbers
     {
-        private CheckNumbersGreaterThanOneThousand _checkNumbersGreaterThanOneThousand;
-
-        public CheckNumbers()
-        {
-            _checkNumbersGreaterThanOneThousand = new CheckNumbersGreaterThanOneThousand();
-        }
-
         public List<int> CheckNegatives(List<int> numbers)
         {
             var negativeNumbers = "";
@@ -28,12 +21,27 @@ namespace StringCalculatorI.Models
                 NegativeNumbers(negativeNumbers);
             }
 
-            return _checkNumbersGreaterThanOneThousand.GetNumbersLessThanOneThousand(numbers);
+            return CheckNumbersGreaterThanOneThousand(numbers);
         }
 
         public void NegativeNumbers(string negativeNumbers)
         {
             throw new Exception("negatives not allowed:  " + negativeNumbers);
+        }
+
+        public List<int> CheckNumbersGreaterThanOneThousand(List<int> convectedNumbers)
+        {
+            var numbersLessThanOneThousand = new List<int>();
+
+            foreach (int number in convectedNumbers)
+            {
+                if (number < 1000)
+                {
+                    numbersLessThanOneThousand.Add(number);
+                }
+            }
+
+            return numbersLessThanOneThousand;
         }
     }
 }

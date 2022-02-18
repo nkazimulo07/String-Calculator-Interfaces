@@ -1,17 +1,16 @@
 ﻿using NUnit.Framework;
-using StringCalculatorI;
 using StringCalculatorI.Models;
 
 namespace StringCalculatorKataTest
 {
     public class DelimitersTest
     {
-        private Delimiters delimiters;
+        private Delimiters _delimiters;
 
         [SetUp]
         public void Setup()
         {
-            delimiters = new Delimiters();
+            _delimiters = new Delimiters();
         }
 
         [Test]
@@ -22,7 +21,7 @@ namespace StringCalculatorKataTest
             string[] expected = { "*", "%", ":", ";" };
 
             // act 
-            var results = delimiters.GetMultipleDelimiters(input);
+            var results = _delimiters.GetMultipleDelimiters(input);
 
             // assert
             Assert.AreEqual(expected, results);

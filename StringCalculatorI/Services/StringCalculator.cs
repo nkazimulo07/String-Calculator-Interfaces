@@ -1,15 +1,14 @@
 ﻿using StringCalculatorI.Interfaces;
-using StringCalculatorI.Models;
 
 namespace StringCalculatorI
 {
     public class StringCalculator : IStringCalculator
     {
-        private GetNumbers _getNumbers;
+        private IGetNumbers _getNumbers;
 
-        public StringCalculator()
+        public StringCalculator(IGetNumbers getNumbers)
         {
-            _getNumbers = new GetNumbers();
+            _getNumbers = getNumbers;
         }
 
         public int Add(string number)
